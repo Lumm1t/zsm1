@@ -1,0 +1,83 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+      "standard-with-typescript",
+      "plugin:unicorn/recommended",
+      "plugin:sonarjs/recommended",
+      "plugin:security/recommended",
+      "plugin:nuxt/recommended",
+      "plugin:vue-a11y/recommended",
+      "@nuxtjs/eslint-config-typescript",
+      "prettier",
+      "plugin:prettier/recommended"
+  ],
+  "plugins": [
+      "unicorn",
+      "sonarjs",
+      "security",
+      "eslint-plugin-import-helpers",
+      "vue-a11y",
+      "prettier"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".vue"]
+
+  },
+  "rules": {
+    "prettier/prettier": "error",
+
+    "unicorn/prevent-abbreviations": "off",
+
+    "no-void": "off",
+    "prefer-const": "warn",
+    "no-console": "off",
+    "import/order": "off",
+
+    // "@typescript-eslint/interface-name-prefix": "off",
+    // "@typescript-eslint/explicit-function-return-type": "off",
+    // "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/strict-boolean-expressions": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-redeclare": "off",
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/member-delimiter-style": [
+        "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/return-await": ["error", "in-try-catch"],
+
+    "import-helpers/order-imports": [
+        "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      // We use slightly different rules in .vue files:
+      "files": ["components/**/*.vue"],
+      "rules": {
+        "unicorn/filename-case": ["error", { "case": "pascalCase" }]
+      }
+    }
+  ]
+}

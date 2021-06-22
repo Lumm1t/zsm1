@@ -1,0 +1,6 @@
+/*.js
+assets/vendor/**
+static/**
+node_modules
+.nuxt
+dist

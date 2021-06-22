@@ -62,7 +62,7 @@
     "eslint-plugin-node": "11",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-promise": "4",
+    "eslint-plugin-promise": "5",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-sonarjs": "^0.8.0-125",
     "eslint-plugin-unicorn": "^33.0.1",

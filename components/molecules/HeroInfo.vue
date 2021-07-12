@@ -11,7 +11,7 @@
       sm:mx-heroinfo
     "
   >
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center h-72">
       <div class="text-center lg:text-left">
         <h1 class="title-font font-medium text-primary text-3xl md:text-4xl">
           {{ info[currentSlide].title }}
@@ -37,8 +37,8 @@
         <component
           :is="info[currentSlide].image"
           class="object-cover object-center rounded"
-          width="70%"
-          height="70%"
+          width="60%"
+          height="auto"
         />
       </div>
     </div>

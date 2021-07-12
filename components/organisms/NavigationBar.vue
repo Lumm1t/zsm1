@@ -82,7 +82,9 @@
             duration-300
             z-30
           "
-          :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
+          :class="
+            isOpen ? 'translate-x-0 visible' : '-translate-x-full invisible'
+          "
         >
           <div v-for="(item, index) in menuItems" :key="index">
             <a

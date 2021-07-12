@@ -26,6 +26,7 @@
       right-0
       mx-auto
       bottom-6
+      z-30
     "
   >
     <svg

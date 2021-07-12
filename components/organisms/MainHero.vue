@@ -14,11 +14,14 @@
 
       <hero-info />
 
+      <hero-side />
+
       <hero-buttons />
     </div>
 
-    <hero-background />
     <scroll-indicator />
+
+    <hero-background />
   </div>
 </template>
 

@@ -14,7 +14,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div class="text-center lg:text-left">
         <h1 class="title-font font-medium text-primary text-3xl md:text-4xl">
-          Zespół Szkół Mechanicznych nr 1 w Bydgoszczy
+          {{ info[currentSlide].title }}
         </h1>
 
         <p
@@ -26,8 +26,7 @@
             row-start-2
           "
         >
-          Szkoła na stale wrosła we współczesny wizerunek miasta Bydgoszczy i
-          regionu kujawsko-pomorskiego.
+          {{ info[currentSlide].description }}
         </p>
       </div>
 
@@ -36,7 +35,7 @@
         style="justify-content: center; align-items: center"
       >
         <component
-          :is="image"
+          :is="info[currentSlide].image"
           class="object-cover object-center rounded"
           width="70%"
           height="70%"
@@ -58,8 +57,32 @@ export default Vue.extend({
   components: { CareerHero, SchoolHero, WhyUsHero },
   data() {
     return {
-      image: 'SchoolHero',
+      info: [
+        {
+          title: 'Zespół Szkół Mechanicznych nr 1 w Bydgoszczy',
+          description:
+            'Szkoła na stale wrosła we współczesny wizerunek miasta Bydgoszczy i regionu kujawsko-pomorskiego.',
+          image: 'SchoolHero',
+        },
+        {
+          title: 'Dlaczego my?',
+          description:
+            'Przez te wszystkie lata szkoła wspierana doświadczoną kadrą nauczycieli i wychowawców, wykształciła szereg znanych osobistości życia politycznego i biznesowego. Absolwenci naszej szkoły bez trudu pokonują następny etap edukacyjny jakim są studia wyższe na wybranej uczelni.',
+          image: 'WhyUsHero',
+        },
+        {
+          title: 'Kariera',
+          description:
+            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach, poszukiwanych na regionalnym rynku pracy.',
+          image: 'CareerHero',
+        },
+      ],
     }
+  },
+  computed: {
+    currentSlide() {
+      return this.$store.getters.getCurrentSlide
+    },
   },
 })
 </script>

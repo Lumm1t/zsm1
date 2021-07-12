@@ -17,7 +17,7 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-    components: [
+  components: [
     '~/components/atoms',
     '~/components/molecules',
     '~/components/organisms',
@@ -31,6 +31,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://color-mode.nuxtjs.org/
+    '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,4 +55,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  purgeCSS: {
+    whitelist: ['dark-mode'],
+  },
 }

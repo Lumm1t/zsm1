@@ -63,6 +63,8 @@
             items-center
             justify-center
             md:items-start md:pl-5
+            text-center
+            md:text-left
           "
         >
           <span class="mt-7 md:mt-1">
@@ -80,10 +82,11 @@
               Aleksander Szołowicz
             </a>
           </span>
-          <span class=""
-            >Wszelkie prawa zastrzeżone &copy;
-            {{ new Date().getFullYear() }}</span
-          >
+
+          <span>
+            Wszelkie prawa zastrzeżone &copy;
+            {{ new Date().getFullYear() }}
+          </span>
         </div>
       </div>
     </div>

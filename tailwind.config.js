@@ -33,6 +33,10 @@ module.exports = {
       backgroundImage: () => ({
         'hero-image': "url('~/assets/images/hero-image.jpg')",
       }),
+      gridTemplateRows: {
+        hero1: '1fr auto 1fr',
+        hero2: '1fr auto 3fr',
+      },
     },
   },
   variants: {

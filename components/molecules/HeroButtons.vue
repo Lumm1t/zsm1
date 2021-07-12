@@ -8,7 +8,7 @@
       z-20
       mx-auto
       mt-10
-      md:mt-32
+      md:mt-24
       h-32
     "
   >

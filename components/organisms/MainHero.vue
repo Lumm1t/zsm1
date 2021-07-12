@@ -1,6 +1,7 @@
 <template>
   <div>
     <hero-background />
+    <scroll-indicator />
 
     <div
       class="
@@ -9,7 +10,7 @@
         max-h-screen
         overflow-hidden
         grid grid-rows-hero2
-        md:grid-rows-hero1
+        lg:grid-rows-hero1
       "
     >
       <div></div>

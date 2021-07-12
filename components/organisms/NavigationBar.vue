@@ -429,12 +429,12 @@ export default Vue.extend({
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop
 
-      if (currentScrollPosition <= 50) {
+      if (currentScrollPosition <= 1) {
         this.showNavbar = true
         this.showBackground = false
         return
       }
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 50) {
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 1) {
         return
       }
       this.showNavbar = currentScrollPosition < this.lastScrollPosition

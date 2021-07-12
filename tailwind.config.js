@@ -27,6 +27,9 @@ module.exports = {
           footer: '#141414',
         },
       },
+      margin: {
+        heroinfo: '20vw',
+      },
       backgroundImage: () => ({
         'hero-image': "url('~/assets/images/hero-image.jpg')",
       }),

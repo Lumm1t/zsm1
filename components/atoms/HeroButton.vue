@@ -11,13 +11,15 @@
       px-6
       font-bold
       bg-opacity-70
-      focus:outline-none
+      text-light-text-text
+      dark:text-dark-text
+      hover:text-primary
+      focus:text-primary focus:outline-none
     "
     style="box-shadow: 0 6px 2px -2px rgb(0, 0, 0, 0.2)"
+    tabindex="0"
   >
-    <span class="relative text-light-text-text dark:text-dark-text">
-      {{ title }}
-    </span>
+    {{ title }}
   </a>
 </template>
 

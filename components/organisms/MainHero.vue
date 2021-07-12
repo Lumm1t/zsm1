@@ -1,8 +1,5 @@
 <template>
   <div>
-    <hero-background />
-    <scroll-indicator />
-
     <div
       class="
         w-full
@@ -19,6 +16,9 @@
 
       <hero-buttons />
     </div>
+
+    <hero-background />
+    <scroll-indicator />
   </div>
 </template>
 

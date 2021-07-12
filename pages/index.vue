@@ -1,3 +1,5 @@
 <template>
-  <div>index page</div>
+  <div>
+    <main-hero />
+  </div>
 </template>

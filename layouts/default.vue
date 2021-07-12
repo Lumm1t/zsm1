@@ -1,3 +1,9 @@
 <template>
-  <Nuxt />
+  <div>
+    <navigation-bar />
+
+    <Nuxt />
+
+    <footer-info />
+  </div>
 </template>

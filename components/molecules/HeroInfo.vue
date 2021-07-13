@@ -8,12 +8,22 @@
       justify-center
       h-full
       mx-6
-      sm:mx-heroinfo
+      md:mx-heroinfo
     "
   >
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center h-72">
-      <div class="text-center lg:text-left">
-        <h1 class="title-font font-medium text-primary text-3xl md:text-4xl">
+    <div
+      class="grid grid-cols-1 2lg:grid-cols-2 items-center gap-y-8 2lg:gap-0"
+    >
+      <div class="text-center 2lg:text-left">
+        <h1
+          class="
+            title-font
+            font-medium
+            text-primary text-xl
+            sm:text-3xl
+            md:text-4xl
+          "
+        >
           {{ info[currentSlide].title }}
         </h1>
 
@@ -23,7 +33,8 @@
             leading-relaxed
             text-light-text
             dark:text-dark-text
-            row-start-2
+            row-start-1
+            2lg:row-start-2
           "
         >
           {{ info[currentSlide].description }}
@@ -31,14 +42,12 @@
       </div>
 
       <div
-        class="row-start-1 hidden lg:flex"
+        class="row-start-2 2lg:row-start-1 hidden sm:flex"
         style="justify-content: center; align-items: center"
       >
         <component
           :is="info[currentSlide].image"
-          class="object-cover object-center rounded"
-          width="60%"
-          height="auto"
+          class="w-full h-full max-w-xs object-cover object-center rounded"
         />
       </div>
     </div>

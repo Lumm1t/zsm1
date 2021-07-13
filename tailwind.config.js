@@ -10,6 +10,9 @@ module.exports = {
   theme: {
     darkSelector: '.dark-mode',
     extend: {
+      screens: {
+        '2lg': '1150px',
+      },
       colors: {
         primary: '#00d563',
         light: {

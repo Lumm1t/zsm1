@@ -13,7 +13,7 @@
       h-10
       text-light-text
       dark:text-dark-text
-      duration-300
+      duration-200
       transform
       border border-dark-layer
       dark:border-light-layer

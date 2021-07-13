@@ -9,6 +9,9 @@
       focus:text-primary
       cursor-pointer
       focus:outline-none
+      transition-colors
+      duration-200
+      ease-in-out
     "
     width="35"
     height="35"

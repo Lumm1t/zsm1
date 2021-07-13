@@ -175,8 +175,8 @@
               dark:text-dark-text
               hover:text-primary
               focus:text-primary focus:outline-none
-              transition
-              duration-150
+              transition-colors
+              duration-200
               ease-in-out
             "
             :href="item.link"
@@ -197,8 +197,8 @@
               dark:text-dark-text
               hover:text-primary
               focus:text-primary focus:outline-none
-              transition
-              duration-150
+              transition-colors
+              duration-200
               ease-in-out
               relative
               cursor-pointer

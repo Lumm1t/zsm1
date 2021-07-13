@@ -8,8 +8,6 @@
       dark:bg-dark-footer
       text-2 text-light-text
       dark:text-dark-text
-      transition-colors
-      duration-200
     "
   >
     <div class="flex flex-col">
@@ -30,7 +28,13 @@
             :key="index"
             aria-current="page"
             :href="link.link"
-            class="hover:text-primary focus:text-primary focus:outline-none"
+            class="
+              hover:text-primary
+              focus:text-primary focus:outline-none
+              transition-colors
+              duration-200
+              ease-in-out
+            "
             tabindex="0"
           >
             {{ link.title }}
@@ -74,6 +78,9 @@
                 hover:text-primary
                 focus:text-primary focus:outline-none
                 underline
+                transition-colors
+                duration-200
+                ease-in-out
               "
               href="https://github.com/Lumm1t"
               target="_blank"

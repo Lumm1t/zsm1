@@ -22,6 +22,10 @@
             text-primary text-xl
             sm:text-3xl
             md:text-4xl
+            transform
+            hover:-translate-y-2
+            transition-transform
+            duration-300
           "
         >
           {{ info[currentSlide].title }}

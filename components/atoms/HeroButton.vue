@@ -19,7 +19,9 @@
     style="box-shadow: 0 6px 2px -2px rgb(0, 0, 0, 0.2)"
     tabindex="0"
   >
-    {{ title }}
+    <span class="transition-colors duration-200 ease-in-out">
+      {{ title }}
+    </span>
   </a>
 </template>
 

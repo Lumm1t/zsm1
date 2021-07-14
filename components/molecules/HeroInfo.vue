@@ -12,7 +12,14 @@
     "
   >
     <div
-      class="grid grid-cols-1 2lg:grid-cols-2 items-center gap-y-16 2lg:gap-0"
+      class="
+        grid grid-cols-1
+        2lg:grid-cols-2
+        items-center
+        gap-y-16
+        2lg:gap-0
+        mb-6
+      "
     >
       <div class="text-center 2lg:text-left">
         <h1

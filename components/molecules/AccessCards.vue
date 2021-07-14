@@ -1,22 +1,24 @@
 <template>
-  <div
-    class="
-      grid grid-cols-2
-      sm:grid-cols-4
-      xl:grid-cols-8
-      gap-4
-      justify-items-center
-      container
-      mx-auto
-    "
-  >
-    <access-card
-      v-for="(card, index) in cards"
-      :key="index"
-      :title="card.title"
-      :link="card.link"
-      :image="card.image"
-    />
+  <div class="mx-3">
+    <div
+      class="
+        grid grid-cols-2
+        sm:grid-cols-4
+        xl:grid-cols-8
+        gap-4
+        justify-items-center
+        container
+        mx-auto
+      "
+    >
+      <access-card
+        v-for="(card, index) in cards"
+        :key="index"
+        :title="card.title"
+        :link="card.link"
+        :image="card.image"
+      />
+    </div>
   </div>
 </template>
 

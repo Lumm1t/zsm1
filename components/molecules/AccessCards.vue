@@ -4,12 +4,10 @@
       grid grid-cols-2
       sm:grid-cols-4
       xl:grid-cols-8
-      gap-3
+      gap-4
       justify-items-center
-      mx-4
-      sm:mx-12
-      2xl:mx-32
-      xl:gap-8
+      container
+      mx-auto
     "
   >
     <access-card

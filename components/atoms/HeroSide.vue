@@ -12,7 +12,11 @@
       z-30
     "
   >
-    <nuxt-link :to="slides[previousSlide].link" class="focus:outline-none">
+    <nuxt-link
+      :to="slides[previousSlide].link"
+      class="focus:outline-none"
+      tabindex="-1"
+    >
       <button
         class="
           flex flex-row
@@ -55,7 +59,11 @@
       </button>
     </nuxt-link>
 
-    <nuxt-link :to="slides[nextSlide].link" class="focus:outline-none">
+    <nuxt-link
+      :to="slides[nextSlide].link"
+      class="focus:outline-none"
+      tabindex="-1"
+    >
       <button
         class="
           flex flex-row-reverse

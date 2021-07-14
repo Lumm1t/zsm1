@@ -10,14 +10,16 @@
         lg:grid-rows-hero1
       "
     >
-      <div></div>
+      <div class="mt-16"></div>
 
       <hero-info />
 
-      <hero-side />
-
-      <hero-buttons />
+      <div class="flex self-end mb-32 md:mb-48 lg:mb-28 mt-6">
+        <hero-buttons />
+      </div>
     </div>
+
+    <hero-side />
 
     <scroll-indicator />
 

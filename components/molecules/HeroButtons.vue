@@ -7,8 +7,6 @@
       lg:grid-cols-4 lg:gap-12
       z-20
       mx-auto
-      mt-10
-      xl:mt-24
       h-32
     "
   >

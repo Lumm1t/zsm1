@@ -3,13 +3,13 @@
     class="
       px-2
       sm:px-8
-      top-1/2
       absolute
       flex
       left-0
       w-full
       justify-between
       z-30
+      top-heroside
     "
   >
     <nuxt-link

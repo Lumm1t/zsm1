@@ -8,13 +8,16 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-    boxShadow: {
-      main: '0 6px 2px -2px rgb(0, 0, 0, 0.2)',
-    },
     darkSelector: '.dark-mode',
     extend: {
       screens: {
         '2lg': '1150px',
+      },
+      boxShadow: {
+        main: '0 6px 2px -2px rgb(0, 0, 0, 0.2)',
+      },
+      inset: {
+        heroside: '45%',
       },
       colors: {
         primary: '#00d563',

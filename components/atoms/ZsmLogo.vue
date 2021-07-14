@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="'/'"
+    to="/"
     tabindex="0"
     class="
       transform

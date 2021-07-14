@@ -23,7 +23,7 @@
       <div class="xl:hidden">
         <div class="flex items-center">
           <button
-            class="mr-2 text-light-text dark:text-dark-text"
+            class="text-light-text dark:text-dark-text"
             aria-label="Open Menu"
             @click="drawer"
             @keyup.enter="drawer"

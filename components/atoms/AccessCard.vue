@@ -13,8 +13,8 @@
       justify-center
       items-center
       transform
-      hover:-translate-y-4
-      focus:-translate-y-4
+      hover:-translate-y-3
+      focus:-translate-y-3
       transition-transform
       duration-300
       focus:outline-none

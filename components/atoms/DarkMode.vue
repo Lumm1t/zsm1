@@ -12,9 +12,9 @@
       transition-colors
       duration-200
       ease-in-out
+      w-8
+      h-8
     "
-    width="35"
-    height="35"
     viewBox="0 0 24 24"
     stroke-width="2"
     fill="none"

@@ -10,7 +10,7 @@
         lg:grid-rows-hero1
       "
     >
-      <div class="mt-16"></div>
+      <div class="mt-32"></div>
 
       <hero-info />
 

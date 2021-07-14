@@ -74,19 +74,19 @@ export default Vue.extend({
         {
           title: 'Zespół Szkół Mechanicznych nr 1 w Bydgoszczy',
           description:
-            'Szkoła na stale wrosła we współczesny wizerunek miasta Bydgoszczy i regionu kujawsko-pomorskiego.',
+            'Szkoła na stale wrosła w wizerunek miasta. Przez te wszystkie lata wspierana doświadczoną kadrą nauczycieli, wykształciła szereg znanych osobistości',
           image: 'SchoolHero',
         },
         {
           title: 'Dlaczego my?',
           description:
-            'Przez te wszystkie lata szkoła wspierana doświadczoną kadrą nauczycieli i wychowawców, wykształciła szereg znanych osobistości życia politycznego i biznesowego. Absolwenci naszej szkoły bez trudu pokonują następny etap edukacyjny jakim są studia wyższe na wybranej uczelni.',
+            'Uczniowie szkoły zdobywają wiele nagród na szczeblu wojewódzkim i ogólnopolskim. Absolwenci bez trudu, pokonują następny etap edukacyjny, kontynuując naukę na studiach wyższych',
           image: 'WhyUsHero',
         },
         {
           title: 'Kariera',
           description:
-            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach, poszukiwanych na regionalnym rynku pracy.',
+            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach, poszukiwanych na regionalnym rynku pracy',
           image: 'CareerHero',
         },
       ],

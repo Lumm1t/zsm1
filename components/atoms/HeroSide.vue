@@ -119,19 +119,19 @@ export default Vue.extend({
         {
           title: 'ZSM1',
           description:
-            'Szkoła na stale wrosła we współczesny wizerunek miasta Bydgoszczy i regionu kujawsko-pomorskiego',
+            'Szkoła na stale wrosła w wizerunek miasta. Przez te wszystkie lata wspierana doświadczoną kadrą nauczycieli, wykształciła szereg znanych osobistości',
           link: '/',
         },
         {
           title: 'Dlaczego my?',
           description:
-            'Przez te wszystkie lata szkoła wspierana doświadczoną kadrą nauczycieli i wychowawców, wykształciła szereg znanych osobistości',
+            'Uczniowie szkoły zdobywają wiele nagród na szczeblu wojewódzkim i ogólnopolskim. Absolwenci bez trudu, pokonują następny etap edukacyjny, kontynuując naukę na studiach wyższych',
           link: '/why-us',
         },
         {
           title: 'Kariera',
           description:
-            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach',
+            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach, poszukiwanych na regionalnym rynku pracy',
           link: '/class-profiles',
         },
       ],

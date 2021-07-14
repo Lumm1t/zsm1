@@ -8,6 +8,9 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
+    boxShadow: {
+      main: '0 6px 2px -2px rgb(0, 0, 0, 0.2)',
+    },
     darkSelector: '.dark-mode',
     extend: {
       screens: {
@@ -37,8 +40,7 @@ module.exports = {
         'hero-image': "url('~/assets/images/hero-image.jpg')",
       }),
       gridTemplateRows: {
-        hero1: '1fr auto 1fr',
-        hero2: '1fr auto 3fr',
+        heroinfo: '1fr 2fr 1fr',
       },
     },
   },

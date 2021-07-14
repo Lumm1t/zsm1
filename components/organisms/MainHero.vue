@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-screen max-h-screen overflow-hidden">
-    <div class="w-full h-full grid" style="grid-template-rows: 1fr 2fr 1fr">
+    <div class="w-full h-full grid grid-rows-heroinfo">
       <div class="mt-16 sm:mt-24"></div>
 
       <hero-info />

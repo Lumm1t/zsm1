@@ -15,8 +15,8 @@
       dark:text-dark-text
       hover:text-primary
       focus:text-primary focus:outline-none
+      shadow-main
     "
-    style="box-shadow: 0 6px 2px -2px rgb(0, 0, 0, 0.2)"
     tabindex="0"
   >
     <span class="transition-colors duration-200 ease-in-out">

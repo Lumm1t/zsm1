@@ -18,8 +18,8 @@
       transition-transform
       duration-300
       focus:outline-none
+      shadow-main
     "
-    style="box-shadow: 0 6px 2px -2px rgb(0, 0, 0, 0.2)"
   >
     <img
       v-if="image"

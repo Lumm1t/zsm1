@@ -23,7 +23,7 @@
       >
         <path
           d="M178.04,-0.48 C414.50,75.48 180.30,102.13 638.54,174.17 L546.56,107.06 L500.00,0.00 Z"
-          style="stroke: none; fill: rgb(255, 255, 255)"
+          class="text-white fill-current"
         ></path>
       </svg>
     </div>

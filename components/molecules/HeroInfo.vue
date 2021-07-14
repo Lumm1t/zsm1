@@ -34,7 +34,7 @@
         <p
           class="
             hidden
-            md:block
+            sm:block
             mt-5
             leading-relaxed
             text-light-text

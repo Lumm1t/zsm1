@@ -12,6 +12,12 @@
       flex flex-col
       justify-center
       items-center
+      transform
+      hover:-translate-y-4
+      focus:-translate-y-4
+      transition-transform
+      duration-300
+      focus:outline-none
     "
     style="box-shadow: 0 6px 2px -2px rgb(0, 0, 0, 0.2)"
   >

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex self-end mb-32 md:mb-48 lg:mb-16">
+  <div class="flex self-center mb-24">
     <div
       class="
         grid grid-cols-1

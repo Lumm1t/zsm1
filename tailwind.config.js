@@ -31,7 +31,7 @@ module.exports = {
         },
       },
       margin: {
-        heroinfo: '20vw',
+        heroinfo: '21vw',
       },
       backgroundImage: () => ({
         'hero-image': "url('~/assets/images/hero-image.jpg')",

@@ -4,7 +4,7 @@
     class="
       animate-bounce
       hidden
-      sm:flex
+      2lg:flex
       items-center
       hover:bg-primary
       focus:bg-primary

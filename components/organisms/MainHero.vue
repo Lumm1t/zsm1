@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <div class="w-full h-screen max-h-screen overflow-hidden">
-      <div class="w-full h-full grid grid-rows-hero2 lg:grid-rows-hero1">
-        <div class="mt-20"></div>
+  <div class="w-full h-screen max-h-screen overflow-hidden">
+    <div class="w-full h-full grid" style="grid-template-rows: 1fr 2fr 1fr">
+      <div class="mt-16 sm:mt-24"></div>
 
-        <hero-info />
+      <hero-info />
 
-        <hero-buttons />
-      </div>
-
-      <hero-side />
-
-      <scroll-indicator />
-
-      <hero-background />
+      <hero-buttons />
     </div>
+
+    <hero-side />
+
+    <scroll-indicator />
+
+    <hero-background />
   </div>
 </template>
 

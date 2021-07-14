@@ -12,21 +12,14 @@
     "
   >
     <div
-      class="
-        grid grid-cols-1
-        2lg:grid-cols-2
-        items-center
-        gap-y-16
-        2lg:gap-0
-        mb-6
-      "
+      class="grid grid-cols-1 2lg:grid-cols-2 items-center gap-8 xl:gap-0 mb-6"
     >
       <div class="text-center 2lg:text-left">
         <h1
           class="
             title-font
             font-medium
-            text-primary text-xl
+            text-primary text-2xl
             sm:text-3xl
             md:text-4xl
             transform
@@ -40,7 +33,9 @@
 
         <p
           class="
-            mt-2
+            hidden
+            md:block
+            mt-5
             leading-relaxed
             text-light-text
             dark:text-dark-text
@@ -52,13 +47,10 @@
         </p>
       </div>
 
-      <div
-        class="row-start-2 2lg:row-start-1 hidden sm:flex"
-        style="justify-content: center; align-items: center"
-      >
+      <div class="row-start-2 2lg:row-start-1 flex items-center justify-center">
         <component
           :is="info[currentSlide].image"
-          class="w-full h-full max-w-xs object-cover object-center rounded"
+          class="object-cover object-center rounded w-3/5 h-auto"
         />
       </div>
     </div>

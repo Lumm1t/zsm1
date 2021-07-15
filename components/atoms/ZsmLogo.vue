@@ -11,7 +11,7 @@
       focus:outline-none
     "
   >
-    <div class="font-bold">
+    <div class="font-semibold text-center">
       <div class="text-2xl leading-4 text-light-text dark:text-dark-text">
         ZSM1
       </div>

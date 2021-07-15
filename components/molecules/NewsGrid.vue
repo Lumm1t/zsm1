@@ -4,10 +4,12 @@
       class="
         grid grid-cols-1
         md:grid-cols-2
-        gap-x-12 gap-y-6
+        gap-x-6
+        xl:gap-x-10
+        gap-y-3
+        md:gap-y-6
         justify-items-center
         container
-        mx-auto
       "
     >
       <news-post

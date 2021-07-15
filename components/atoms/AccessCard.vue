@@ -7,10 +7,9 @@
       overflow-hidden
       bg-light-layer
       dark:bg-dark-layer
-      bg-opacity-70
-      rounded-2xl
+      rounded-3xl
       flex flex-col
-      justify-center
+      justify-around
       items-center
       transform
       hover:-translate-y-3
@@ -19,11 +18,12 @@
       duration-300
       focus:outline-none
       shadow-main
+      p-3
     "
   >
     <img
       v-if="image"
-      class="object-contain w-36 h-36"
+      class="object-contain w-32 h-32"
       :src="image"
       :alt="title"
     />
@@ -31,9 +31,8 @@
     <p
       v-if="title"
       class="
-        text-center text-xs
-        font-bold
-        m-2
+        text-center text-sm
+        font-semibold
         text-light-text
         dark:text-dark-text
       "

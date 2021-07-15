@@ -8,7 +8,6 @@
         gap-4
         justify-items-center
         container
-        mx-auto
       "
     >
       <access-card

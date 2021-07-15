@@ -6,7 +6,6 @@
       xl:px-12
       navbar
       translate-y-0
-      container
       flex
       items-center
       justify-between

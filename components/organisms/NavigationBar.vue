@@ -150,9 +150,7 @@
     </div>
 
     <!-- Logo -->
-    <div class="flex items-center">
-      <ZsmLogo />
-    </div>
+    <ZsmLogo />
 
     <!-- Menu -->
     <div
@@ -163,14 +161,14 @@
         justify-center
         sm:items-stretch sm:justify-start
         font-semibold
+        gap-x-14
+        2xl:gap-x-24
       "
     >
       <div v-for="(item, index) in menuItems" :key="index">
         <a
           v-if="item.link"
           class="
-            px-7
-            2xl:px-12
             block
             leading-5
             text-light-text
@@ -190,8 +188,6 @@
         <div
           v-else
           class="
-            px-7
-            2xl:px-12
             items-center
             flex
             leading-5
@@ -272,9 +268,7 @@
     </div>
 
     <!-- Dark mode button -->
-    <div class="flex items-center">
-      <DarkMode />
-    </div>
+    <DarkMode />
   </nav>
 </template>
 

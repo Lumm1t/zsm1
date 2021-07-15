@@ -8,6 +8,16 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
+    container: {
+      center: true,
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1650px',
+      },
+    },
     darkSelector: '.dark-mode',
     extend: {
       screens: {

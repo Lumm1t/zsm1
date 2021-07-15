@@ -48,7 +48,7 @@
           ></path>
         </svg>
 
-        <div class="text-left hidden xl:block w-56">
+        <div class="text-left hidden xl:block w-48">
           <h2 class="block text-2xl font-bold">
             {{ slides[previousSlide].title }}
           </h2>
@@ -95,7 +95,7 @@
           ></path>
         </svg>
 
-        <div class="text-right hidden xl:block w-56">
+        <div class="text-right hidden xl:block w-48">
           <h2 class="block text-2xl font-bold">
             {{ slides[nextSlide].title }}
           </h2>

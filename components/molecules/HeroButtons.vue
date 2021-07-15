@@ -6,6 +6,7 @@
         gap-1
         sm:grid-cols-2
         lg:grid-cols-4 lg:gap-12
+        xl:gap-24
         z-20
         mx-auto
         h-32

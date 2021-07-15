@@ -9,6 +9,7 @@
       rounded-full
       py-3
       px-6
+      xl:px-8
       font-bold
       bg-opacity-70
       text-light-text-text

@@ -53,6 +53,7 @@ module.exports = {
     extend: {
       opacity: ['dark'],
       boxShadow: ['dark'],
+      backgroundColor: ['group-focus'],
     },
   },
 }

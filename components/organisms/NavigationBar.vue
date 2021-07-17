@@ -231,28 +231,32 @@
               top-0
             "
           >
-            <li
+            <a
               v-for="(element, i) in item.links"
               :key="i"
-              class="
-                cursor-pointer
-                text-light-text
-                dark:text-dark-text
-                leading-3
-                tracking-normal
-                py-3
-                hover:bg-primary hover:text-white
-                focus:bg-primary focus:text-white
-                px-3
-                font-normal
-                focus:outline-none
-              "
-              tabindex="0"
+              :href="element.link"
+              class="group focus:outline-none"
             >
-              <a :href="element.link" class="focus:outline-none">
+              <li
+                class="
+                  cursor-pointer
+                  text-light-text
+                  dark:text-dark-text
+                  leading-3
+                  tracking-normal
+                  py-3
+                  group-hover:bg-primary
+                  group-focus:bg-primary
+                  hover:bg-primary hover:text-white
+                  focus:bg-primary focus:text-white
+                  px-3
+                  font-normal
+                  focus:outline-none
+                "
+              >
                 {{ element.title }}
-              </a>
-            </li>
+              </li>
+            </a>
           </ul>
 
           {{ item.title }}

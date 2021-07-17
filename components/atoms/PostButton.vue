@@ -13,6 +13,8 @@
       dark:text-dark-text
       hover:text-primary
       focus:text-primary
+      dark:hover:text-primary dark:focus:text-primary
+      focus:outline-none
       transition-colors
       duration-200
       ease-in-out

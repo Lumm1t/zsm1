@@ -26,10 +26,9 @@
           focus:-translate-x-2 focus:-translate-y-2
           text-light-hero-side
           dark:text-dark-hero-side
-          hover:text-light-text
-          dark-hover:text-dark-text
           focus:text-light-text
-          dark-focus:text-dark-text
+          hover:text-light-text
+          dark:hover:text-dark-text dark:focus:text-dark-text
           duration-700
           outline-none
           focus:outline-none
@@ -73,10 +72,9 @@
           focus:translate-x-2 focus:-translate-y-2
           text-light-hero-side
           dark:text-dark-hero-side
-          hover:text-light-text
-          dark-hover:text-dark-text
           focus:text-light-text
-          dark-focus:text-dark-text
+          hover:text-light-text
+          dark:hover:text-dark-text dark:focus:text-dark-text
           duration-700
           outline-none
           focus:outline-none

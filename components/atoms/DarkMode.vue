@@ -7,6 +7,7 @@
       dark:text-dark-text
       hover:text-primary
       focus:text-primary
+      dark:hover:text-primary dark:focus:text-primary
       cursor-pointer
       focus:outline-none
       transition-colors
@@ -21,8 +22,8 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     tabindex="0"
-    @click="toggle"
-    @keyup.enter="toggle"
+    @click="changeTheme"
+    @keyup.enter="changeTheme"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <circle cx="12" cy="12" r="9"></circle>
@@ -39,9 +40,9 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'DarkMode',
   methods: {
-    toggle() {
-      ;(this as any).$colorMode.preference =
-        (this as any).$colorMode.value === 'light' ? 'dark' : 'light'
+    changeTheme() {
+      this.$colorMode.preference =
+        this.$colorMode.value === 'light' ? 'dark' : 'light'
     },
   },
 })

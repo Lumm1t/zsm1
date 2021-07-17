@@ -15,7 +15,9 @@
       text-light-text-text
       dark:text-dark-text
       hover:text-primary
-      focus:text-primary focus:outline-none
+      focus:text-primary
+      dark:hover:text-primary dark:focus:text-primary
+      focus:outline-none
       shadow-main
     "
     tabindex="0"

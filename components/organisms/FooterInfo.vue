@@ -30,7 +30,9 @@
             :href="link.link"
             class="
               hover:text-primary
-              focus:text-primary focus:outline-none
+              focus:text-primary
+              dark:hover:text-primary dark:focus:text-primary
+              focus:outline-none
               transition-colors
               duration-200
               ease-in-out
@@ -76,7 +78,9 @@
             <a
               class="
                 hover:text-primary
-                focus:text-primary focus:outline-none
+                focus:text-primary
+                dark:hover:text-primary dark:focus:text-primary
+                focus:outline-none
                 underline
                 transition-colors
                 duration-200

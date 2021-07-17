@@ -31,10 +31,10 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // https://color-mode.nuxtjs.org/
-    '@nuxtjs/color-mode',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
+    // https://color-mode.nuxtjs.org/
+    '@nuxtjs/color-mode',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -55,10 +55,12 @@ export default {
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // Build configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  purgeCSS: {
-    whitelist: ['dark-mode'],
+  // Color mode configuration https://color-mode.nuxtjs.org/#configuration
+  colorMode: {
+    classSuffix: '',
+    storageKey: 'theme',
   },
 }

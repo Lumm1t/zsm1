@@ -91,7 +91,13 @@
         <div v-for="(item, index) in menuItems" :key="index">
           <a
             v-if="item.link"
-            class="inline-block px-6 py-3 hover:text-primary"
+            class="
+              inline-block
+              px-6
+              py-3
+              hover:text-primary
+              dark:hover:text-primary
+            "
             :href="item.link"
             tabindex="0"
           >
@@ -100,7 +106,7 @@
 
           <div
             v-else
-            class="px-6 py-3 hover:text-primary"
+            class="px-6 py-3 hover:text-primary dark:hover:text-primary"
             tabindex="0"
             @click="dropdownHandler($event)"
             @keyup.enter="dropdownHandler($event)"
@@ -174,7 +180,9 @@
             text-light-text
             dark:text-dark-text
             hover:text-primary
-            focus:text-primary focus:outline-none
+            focus:text-primary
+            dark:hover:text-primary dark:focus:text-primary
+            focus:outline-none
             transition-colors
             duration-200
             ease-in-out
@@ -194,7 +202,9 @@
             text-light-text
             dark:text-dark-text
             hover:text-primary
-            focus:text-primary focus:outline-none
+            focus:text-primary
+            dark:hover:text-primary dark:focus:text-primary
+            focus:outline-none
             transition-colors
             duration-200
             ease-in-out

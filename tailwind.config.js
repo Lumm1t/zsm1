@@ -1,12 +1,5 @@
 module.exports = {
-  purge: [
-    './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-  ],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
@@ -18,7 +11,6 @@ module.exports = {
         '2xl': '1650px',
       },
     },
-    darkSelector: '.dark-mode',
     extend: {
       screens: {
         '2lg': '1150px',
@@ -58,36 +50,9 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: [
-      'dark',
-      'dark-hover',
-      'dark-group-hover',
-      'dark-even',
-      'dark-odd',
-      'hover',
-      'focus',
-      'responsive',
-    ],
-    borderColor: [
-      'dark',
-      'dark-focus',
-      'dark-focus-within',
-      'hover',
-      'responsive',
-    ],
-    textColor: [
-      'dark',
-      'dark-hover',
-      'dark-focus',
-      'dark-active',
-      'hover',
-      'focus',
-      'responsive',
-    ],
-    boxShadow: ['dark'],
     extend: {
       opacity: ['dark'],
+      boxShadow: ['dark'],
     },
   },
-  plugins: [require('tailwindcss-dark-mode')()],
 }

@@ -28,7 +28,7 @@
             duration-300
           "
         >
-          {{ info[currentSlide].title }}
+          {{ heroDescriptions[currentSlide].title }}
         </h1>
 
         <p
@@ -43,13 +43,13 @@
             2lg:row-start-2
           "
         >
-          {{ info[currentSlide].description }}
+          {{ heroDescriptions[currentSlide].description }}
         </p>
       </div>
 
       <div class="row-start-2 2lg:row-start-1 flex items-center justify-center">
         <component
-          :is="info[currentSlide].image"
+          :is="heroDescriptions[currentSlide].image"
           class="object-cover object-center rounded w-3/5 h-auto"
         />
       </div>
@@ -60,6 +60,7 @@
 <script lang="ts">
 // @ts-nocheck
 import CareerHero from '~/assets/heroes/career.svg?inline'
+import heroDescriptions from '~/assets/heroes/descriptions'
 import SchoolHero from '~/assets/heroes/school.svg?inline'
 import WhyUsHero from '~/assets/heroes/why-us.svg?inline'
 import Vue from 'vue'
@@ -67,30 +68,9 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'HeroInfo',
   components: { CareerHero, SchoolHero, WhyUsHero },
-  data() {
-    return {
-      info: [
-        {
-          title: 'Zespół Szkół Mechanicznych nr 1 w Bydgoszczy',
-          description:
-            'Szkoła na stale wrosła w wizerunek miasta. Przez te wszystkie lata wspierana doświadczoną kadrą nauczycieli, wykształciła szereg znanych osobistości',
-          image: 'SchoolHero',
-        },
-        {
-          title: 'Dlaczego my?',
-          description:
-            'Uczniowie szkoły zdobywają wiele nagród na szczeblu wojewódzkim i ogólnopolskim. Absolwenci bez trudu, pokonują następny etap edukacyjny, kontynuując naukę na studiach wyższych',
-          image: 'WhyUsHero',
-        },
-        {
-          title: 'Kariera',
-          description:
-            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach, poszukiwanych na regionalnym rynku pracy',
-          image: 'CareerHero',
-        },
-      ],
-    }
-  },
+  data: () => ({
+    heroDescriptions,
+  }),
   computed: {
     currentSlide() {
       return this.$store.getters.getCurrentSlide

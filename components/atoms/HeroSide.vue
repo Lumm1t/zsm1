@@ -13,7 +13,7 @@
     "
   >
     <nuxt-link
-      :to="slides[previousSlide].link"
+      :to="heroDescriptions[previousSlide].link"
       class="focus:outline-none"
       tabindex="-1"
     >
@@ -49,17 +49,20 @@
 
         <div class="text-left hidden xl:block w-48">
           <h2 class="block text-2xl font-bold">
-            {{ slides[previousSlide].title }}
+            {{
+              heroDescriptions[previousSlide].short ||
+              heroDescriptions[previousSlide].title
+            }}
           </h2>
           <p class="block text-xs mt-2">
-            {{ slides[previousSlide].description }}
+            {{ heroDescriptions[previousSlide].description }}
           </p>
         </div>
       </button>
     </nuxt-link>
 
     <nuxt-link
-      :to="slides[nextSlide].link"
+      :to="heroDescriptions[nextSlide].link"
       class="focus:outline-none"
       tabindex="-1"
     >
@@ -95,10 +98,13 @@
 
         <div class="text-right hidden xl:block w-48">
           <h2 class="block text-2xl font-bold">
-            {{ slides[nextSlide].title }}
+            {{
+              heroDescriptions[nextSlide].short ||
+              heroDescriptions[nextSlide].title
+            }}
           </h2>
           <p class="block text-xs mt-2">
-            {{ slides[nextSlide].description }}
+            {{ heroDescriptions[nextSlide].description }}
           </p>
         </div>
       </button>
@@ -107,34 +113,14 @@
 </template>
 
 <script lang="ts">
+import heroDescriptions from '~/assets/heroes/descriptions'
 import Vue from 'vue'
 
 export default Vue.extend({
   name: 'HeroSide',
-  data() {
-    return {
-      slides: [
-        {
-          title: 'ZSM1',
-          description:
-            'Szkoła na stale wrosła w wizerunek miasta. Przez te wszystkie lata wspierana doświadczoną kadrą nauczycieli, wykształciła szereg znanych osobistości',
-          link: '/',
-        },
-        {
-          title: 'Dlaczego my?',
-          description:
-            'Uczniowie szkoły zdobywają wiele nagród na szczeblu wojewódzkim i ogólnopolskim. Absolwenci bez trudu, pokonują następny etap edukacyjny, kontynuując naukę na studiach wyższych',
-          link: '/why-us',
-        },
-        {
-          title: 'Kariera',
-          description:
-            'W zakresie kształcenia zawodowego realizujemy nauczanie w atrakcyjnych zawodach, poszukiwanych na regionalnym rynku pracy',
-          link: '/class-profiles',
-        },
-      ],
-    }
-  },
+  data: () => ({
+    heroDescriptions,
+  }),
   computed: {
     previousSlide() {
       return this.$store.getters.getPreviousSlide

@@ -68,7 +68,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-sonarjs": "^0.9.1",
     "eslint-plugin-unicorn": "^34.0.1",
-    "eslint-plugin-vue": "^7.14.0",
+    "eslint-plugin-vue": "^7.15.0",
     "eslint-plugin-vue-a11y": "^0.0.31",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.1",

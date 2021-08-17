@@ -66,7 +66,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "5",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-sonarjs": "^0.9.1",
+    "eslint-plugin-sonarjs": "^0.10.0",
     "eslint-plugin-unicorn": "^35.0.0",
     "eslint-plugin-vue": "^7.16.0",
     "eslint-plugin-vue-a11y": "^0.0.31",

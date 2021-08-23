@@ -1,7 +1,8 @@
 <template>
   <p class="text-lg md:text-4xl medium text-light-text dark:text-dark-text">
     W zakresie kształcenia zawodowego realizujemy nauczanie w zawodach
-    <span
+    <a
+      href="https://zsm1.bydgoszcz.pl/strony/rekrutacja/"
       class="
         bg-gradient-to-r
         from-black
@@ -13,12 +14,13 @@
         duration-700
         ease-out
         hover:text-primary
-        cursor-pointer
       "
       @mouseenter="playVideo"
+      @focus="playVideo"
       @mouseleave="pauseVideo"
+      @blur="pauseVideo"
     >
-      dostosowanych do regionalnego rynku pracy</span
+      dostosowanych do regionalnego rynku pracy</a
     >, posiadamy bogatą bazę dydaktyczną pozwalającą skutecznie kształcić
     specjalistów.
   </p>

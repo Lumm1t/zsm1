@@ -16,14 +16,13 @@
   >
     <div
       class="transition-all delay-700 w-full h-full"
-      :class="shouldPlayVideo ? 'opacity-20 visible' : 'opacity-0 invisible'"
+      :class="shouldPlayVideo ? 'visible opacity-20' : 'invisible opacity-0'"
     >
       <video
         ref="videoRef"
-        muted="muted"
-        loop="loop"
+        :muted="true"
+        :loop="true"
         class="object-cover w-full h-full"
-        :class="shouldPlayVideo ? '' : ''"
       >
         <source
           src="https://zsm1.bydgoszcz.pl/strony/rekrutacja/_nuxt/videos/video2.f92ce53.mp4"

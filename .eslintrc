@@ -83,7 +83,8 @@
           "ignoreCase": true
         }
       }
-    ]
+    ],
+    "vue-a11y/media-has-caption": "off"
   },
   "overrides": [
     {

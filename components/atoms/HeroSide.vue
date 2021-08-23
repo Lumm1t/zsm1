@@ -33,8 +33,6 @@
           outline-none
           focus:outline-none
         "
-        @click="$store.dispatch('decrementAsync')"
-        @keyup.enter="$store.dispatch('decrementAsync')"
       >
         <svg class="transform rotate-180 mr-5" width="10" height="21">
           <path
@@ -82,8 +80,6 @@
           outline-none
           focus:outline-none
         "
-        @click="$store.dispatch('incrementAsync')"
-        @keyup.enter="$store.dispatch('incrementAsync')"
       >
         <svg class="ml-5" width="10" height="21">
           <path

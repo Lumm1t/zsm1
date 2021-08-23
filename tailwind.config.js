@@ -45,6 +45,11 @@ module.exports = {
       backgroundImage: () => ({
         'hero-image': "url('~/assets/images/hero-image.jpg')",
       }),
+      backgroundSize: {
+        'underline-from': '100% 1px;',
+        'underline-to': '0% 1px;',
+      },
+      backgroundPosition: {},
       gridTemplateRows: {
         heroinfo: '1fr 2fr 1fr',
       },

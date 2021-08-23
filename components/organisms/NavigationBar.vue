@@ -1,11 +1,14 @@
 <template>
   <nav
+    :class="{
+      'transform -translate-y-full': !showNavbar && !hamburgerOpen,
+      'bg-light-layer dark:bg-dark-layer shadow-md py-6': showBackground,
+      'py-6 xl:py-16': !showBackground,
+    }"
     class="
       fixed
       px-6
       xl:px-12
-      navbar
-      translate-y-0
       flex
       items-center
       justify-between
@@ -15,35 +18,38 @@
       duration-500
       ease-out
     "
-    :class="{
-      'transform -translate-y-full': !showNavbar,
-      'bg-light-layer dark:bg-dark-layer shadow-md py-6': showBackground,
-      'py-6 xl:py-16': !showBackground,
-    }"
   >
-    <!-- Drawer -->
+    <!-- Hamburger -->
     <div class="xl:hidden">
-      <div class="flex items-center">
-        <button
-          class="text-light-text dark:text-dark-text"
-          aria-label="Open Menu"
-          @click="drawer"
-          @keyup.enter="drawer"
+      <!-- Hamburger icon -->
+      <button
+        class="
+          text-light-text
+          dark:text-dark-text
+          hover:text-primary
+          focus:text-primary
+          dark:hover:text-primary dark:focus:text-primary
+          focus:outline-none
+          z-10
+        "
+        aria-label="Otwórz menu"
+        @click="hamburgerOpen = !hamburgerOpen"
+        @keyup.esc="hamburgerOpen = false"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          class="w-8 h-8"
         >
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            class="w-8 h-8"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
 
+      <!-- Hamburger transition -->
       <transition
         enter-class="opacity-0"
         enter-active-class="ease-out transition-medium"
@@ -53,66 +59,151 @@
         leave-to-class="opacity-0"
       >
         <div
-          v-show="isOpen"
+          v-show="hamburgerOpen"
           class="z-10 fixed inset-0 transition-opacity"
-          @keydown.esc="isOpen = false"
+          @keydown.esc="hamburgerOpen = false"
         >
           <div
             class="absolute inset-0 bg-black opacity-50"
             tabindex="0"
-            @click="isOpen = false"
-            @keyup.enter="isOpen = false"
+            @click="hamburgerOpen = false"
+            @keyup.enter="hamburgerOpen = false"
           ></div>
         </div>
       </transition>
 
+      <!-- Hamburger menu -->
       <aside
         class="
-          transform
+          fixed
           top-0
           left-0
-          w-64
-          text-light-text
-          dark:text-dark-text
           bg-light-layer
           dark:bg-dark-layer
-          fixed
+          w-64
           h-full
-          overflow-auto
-          ease-in-out
+          transform
           transition-all
+          ease-in-out
           duration-300
+          overflow-auto
           z-30
         "
         :class="
-          isOpen ? 'translate-x-0 visible' : '-translate-x-full invisible'
+          hamburgerOpen
+            ? 'translate-x-0 visible'
+            : '-translate-x-full invisible'
         "
       >
-        <div v-for="(item, index) in menuItems" :key="index">
-          <a
-            v-if="item.link"
-            class="
-              inline-block
-              px-6
-              py-3
-              hover:text-primary
-              dark:hover:text-primary
-            "
-            :href="item.link"
-            tabindex="0"
-          >
-            {{ item.title }}
-          </a>
+        <ul class="flex flex-col text-light-text dark:text-dark-text px-4">
+          <li v-for="(item, index) in menuItems" :key="index">
+            <a
+              v-if="item.link"
+              :href="item.link"
+              class="
+                block
+                px-4
+                py-2
+                mt-2
+                hover:bg-primary
+                focus:bg-primary focus:outline-none
+                rounded
+              "
+            >
+              {{ item.title }}
+            </a>
 
-          <div
-            v-else
-            class="px-6 py-3 hover:text-primary dark:hover:text-primary"
-            tabindex="0"
-            @click="dropdownHandler($event)"
-            @keyup.enter="dropdownHandler($event)"
+            <div v-else @click="dropdownOpen" @keydown.esc="dropdownClose">
+              <a
+                href="#"
+                class="
+                  block
+                  px-4
+                  py-2
+                  mt-2
+                  hover:bg-primary
+                  focus:bg-primary focus:outline-none
+                  rounded
+                "
+              >
+                <div class="flex items-center justify-between">
+                  {{ item.title }}
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </a>
+
+              <ul
+                class="dropdown hidden mx-2 rounded border-b border-l border-r"
+              >
+                <li v-for="(element, i) in item.links" :key="i">
+                  <a
+                    :href="element.link"
+                    class="
+                      p-2
+                      pl-4
+                      block
+                      hover:bg-primary
+                      focus:bg-primary focus:outline-none
+                    "
+                  >
+                    {{ element.title }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Logo -->
+    <ZsmLogo />
+
+    <!-- Menu -->
+    <ul
+      class="
+        hidden
+        xl:flex
+        items-center
+        justify-center
+        font-semibold
+        gap-x-14
+        2xl:gap-x-24
+        text-light-text
+        dark:text-dark-text
+      "
+    >
+      <li v-for="(item, index) in menuItems" :key="index">
+        <a
+          v-if="item.link"
+          :href="item.link"
+          class="hover:text-primary focus:text-primary focus:outline-none"
+        >
+          {{ item.title }}
+        </a>
+
+        <div v-else @click="dropdownOpen" @keydown.esc="dropdownClose">
+          <a
+            href="#"
+            class="hover:text-primary focus:text-primary focus:outline-none"
           >
-            <span>{{ item.title }}</span>
-            <span class="absolute ml-2">
+            <div class="flex items-center gap-1">
+              {{ item.title }}
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -127,159 +218,35 @@
                 <path stroke="none" d="M0 0h24v24H0z"></path>
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
-            </span>
+            </div>
+          </a>
 
-            <ul class="hidden top-0">
-              <li
-                v-for="(element, i) in item.links"
-                :key="i"
-                tabindex="0"
-                class="
-                  cursor-pointer
-                  text-light-text
-                  dark:text-dark-text
-                  tracking-normal
-                  py-3
-                  hover:bg-primary hover:text-white
-                  px-3
-                  font-normal
-                "
-              >
-                <a :href="element.link">
-                  {{ element.title }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <!-- Logo -->
-    <ZsmLogo />
-
-    <!-- Menu -->
-    <div
-      class="
-        hidden
-        xl:flex
-        items-center
-        justify-center
-        sm:items-stretch sm:justify-start
-        font-semibold
-        gap-x-14
-        2xl:gap-x-24
-      "
-    >
-      <div v-for="(item, index) in menuItems" :key="index">
-        <a
-          v-if="item.link"
-          class="
-            block
-            leading-5
-            text-light-text
-            dark:text-dark-text
-            hover:text-primary
-            focus:text-primary
-            dark:hover:text-primary dark:focus:text-primary
-            focus:outline-none
-            transition-colors
-            duration-200
-            ease-in-out
-          "
-          :href="item.link"
-          tabindex="0"
-        >
-          {{ item.title }}
-        </a>
-
-        <div
-          v-else
-          class="
-            items-center
-            flex
-            leading-5
-            text-light-text
-            dark:text-dark-text
-            hover:text-primary
-            focus:text-primary
-            dark:hover:text-primary dark:focus:text-primary
-            focus:outline-none
-            transition-colors
-            duration-200
-            ease-in-out
-            relative
-            cursor-pointer
-          "
-          tabindex="0"
-          @click="dropdownHandler($event)"
-          @keyup.enter="dropdownHandler($event)"
-        >
           <ul
             class="
-              bg-light-layer
-              dark:bg-dark-layer
-              shadow
-              rounded
-              py-1
-              w-56
-              left-0
-              mt-8
-              -ml-4
+              dropdown
               absolute
               hidden
-              top-0
+              dark:bg-dark-layer
+              bg-white bg-opacity-75
             "
           >
-            <a
-              v-for="(element, i) in item.links"
-              :key="i"
-              :href="element.link"
-              class="group focus:outline-none"
-            >
-              <li
+            <li v-for="(element, i) in item.links" :key="i">
+              <a
+                :href="element.link"
                 class="
-                  cursor-pointer
-                  text-light-text
-                  dark:text-dark-text
-                  leading-3
-                  tracking-normal
-                  py-3
-                  group-hover:bg-primary
-                  group-focus:bg-primary
-                  hover:bg-primary hover:text-white
-                  focus:bg-primary focus:text-white
-                  px-3
-                  font-normal
-                  focus:outline-none
+                  block
+                  p-2
+                  hover:bg-primary
+                  focus:bg-primary focus:outline-none
                 "
               >
                 {{ element.title }}
-              </li>
-            </a>
+              </a>
+            </li>
           </ul>
-
-          {{ item.title }}
-
-          <span class="ml-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </span>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
 
     <!-- Dark mode button -->
     <DarkMode />
@@ -289,152 +256,167 @@
 <script lang="ts">
 import Vue from 'vue'
 
+interface Data {
+  hamburgerOpen: boolean
+  showNavbar: boolean
+  showBackground: boolean
+  lastScrollPosition: number
+  // prettier-ignore
+  menuItems: { title: string, link?: string, links?: { title: string, link: string }[] }[]
+}
+
 export default Vue.extend({
   name: 'NavigationBar',
-  data() {
-    return {
-      isOpen: false as boolean,
-      showNavbar: true,
-      showBackground: false,
-      lastScrollPosition: 0,
-      menuItems: [
-        { title: 'Aktualności', link: '#' },
-        {
-          title: 'Szkoła',
-          links: [
-            {
-              title: 'Organizacja roku szkolnego',
-              link: '#',
-            },
-            {
-              title: 'Dyrekcja szkoły',
-              link: '#',
-            },
-            {
-              title: 'Pedagog szkolny',
-              link: '#',
-            },
-            {
-              title: 'Rada Rodziców',
-              link: '#',
-            },
-            {
-              title: 'Dokumenty szkoły',
-              link: '#',
-            },
-            {
-              title: 'Informacje dla emerytów',
-              link: '#',
-            },
-            {
-              title: 'Ewaluacja zewnętrzna',
-              link: '#',
-            },
-            {
-              title: 'Dyżury nauczycieli',
-              link: '#',
-            },
-          ],
-        },
-        {
-          title: 'Uczeń',
-          links: [
-            {
-              title: 'Biblioteka',
-              link: '#',
-            },
-            {
-              title: 'Plan praktyk',
-              link: '#',
-            },
-            {
-              title: 'Dokumenty do pobrania',
-              link: '#',
-            },
-            {
-              title: 'Oferty pracy',
-              link: '#',
-            },
-            {
-              title: 'Podręczniki szkolne',
-              link: '#',
-            },
-            {
-              title: 'Publikacje nauczycieli',
-              link: '#',
-            },
-            {
-              title: 'PZO',
-              link: '#',
-            },
-            {
-              title: 'Osiągnięcia uczniów',
-              link: '#',
-            },
-            {
-              title: 'Koła zainteresowań',
-              link: '#',
-            },
-            {
-              title: 'Kalendarz imprez',
-              link: '#',
-            },
-            {
-              title: 'Serwis komputerowy',
-              link: '#',
-            },
-          ],
-        },
-        {
-          title: 'Egzaminy',
-          links: [
-            {
-              title: 'Egzamin maturalny CKE',
-              link: '#',
-            },
-            {
-              title: 'Egzamin zawodowy CKE',
-              link: '#',
-            },
-          ],
-        },
-        { title: 'Plan lekcji', link: '#' },
-        { title: 'Zastępstwa', link: '#' },
-        { title: 'E-dziennik', link: '#' },
-        { title: 'Kontakt', link: '#' },
-      ] as object[],
-    }
-  },
+  data: (): Data => ({
+    hamburgerOpen: false,
+    showNavbar: true,
+    showBackground: false,
+    lastScrollPosition: 0,
+    menuItems: [
+      { title: 'Aktualności', link: '/' },
+      {
+        title: 'Szkoła',
+        links: [
+          {
+            title: 'Organizacja roku szkolnego',
+            link: '/',
+          },
+          {
+            title: 'Dyrekcja szkoły',
+            link: '/',
+          },
+          {
+            title: 'Pedagog szkolny',
+            link: '/',
+          },
+          {
+            title: 'Rada Rodziców',
+            link: '/',
+          },
+          {
+            title: 'Dokumenty szkoły',
+            link: '/',
+          },
+          {
+            title: 'Informacje dla emerytów',
+            link: '/',
+          },
+          {
+            title: 'Ewaluacja zewnętrzna',
+            link: '/',
+          },
+          {
+            title: 'Dyżury nauczycieli',
+            link: '/',
+          },
+        ],
+      },
+      {
+        title: 'Uczeń',
+        links: [
+          {
+            title: 'Biblioteka',
+            link: '/',
+          },
+          {
+            title: 'Plan praktyk',
+            link: '/',
+          },
+          {
+            title: 'Dokumenty do pobrania',
+            link: '/',
+          },
+          {
+            title: 'Oferty pracy',
+            link: '/',
+          },
+          {
+            title: 'Podręczniki szkolne',
+            link: '/',
+          },
+          {
+            title: 'Publikacje nauczycieli',
+            link: '/',
+          },
+          {
+            title: 'PZO',
+            link: '/',
+          },
+          {
+            title: 'Osiągnięcia uczniów',
+            link: '/',
+          },
+          {
+            title: 'Koła zainteresowań',
+            link: '/',
+          },
+          {
+            title: 'Kalendarz imprez',
+            link: '/',
+          },
+          {
+            title: 'Serwis komputerowy',
+            link: '/',
+          },
+        ],
+      },
+      {
+        title: 'Egzaminy',
+        links: [
+          {
+            title: 'Egzamin maturalny CKE',
+            link: '/',
+          },
+          {
+            title: 'Egzamin zawodowy CKE',
+            link: '/',
+          },
+        ],
+      },
+      { title: 'Plan lekcji', link: '/' },
+      { title: 'Zastępstwa', link: '/' },
+      { title: 'E-dziennik', link: '/' },
+      { title: 'Kontakt', link: '/' },
+    ],
+  }),
   watch: {
-    isOpen: {
+    hamburgerOpen: {
       immediate: true,
-      handler(isOpen) {
+      handler(isOpen: boolean) {
         if (process.client) {
-          if (isOpen === true)
-            document.body.style.setProperty('overflow', 'hidden')
+          if (isOpen) document.body.style.setProperty('overflow', 'hidden')
           else document.body.style.removeProperty('overflow')
         }
       },
     },
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', (this as any).onScroll)
+    window.removeEventListener('scroll', this.onScroll)
   },
   mounted() {
-    window.addEventListener('scroll', (this as any).onScroll)
-
-    document.addEventListener('keydown', (e) => {
-      // eslint-disable-next-line unicorn/prefer-keyboard-event-key
-      if (e.keyCode === 27 && this.isOpen) this.isOpen = false
-    })
+    window.addEventListener('scroll', this.onScroll)
   },
   methods: {
-    drawer() {
-      this.isOpen = !this.isOpen
+    dropdownOpen(event: any) {
+      const targetDropdown = event.currentTarget.querySelector('.dropdown')
+
+      this.closeAllDropdowns(targetDropdown)
+
+      targetDropdown.classList.toggle('hidden')
     },
-    dropdownHandler(event: any) {
-      const single = event.currentTarget.querySelectorAll('ul')[0]
-      single.classList.toggle('hidden')
+    dropdownClose(event: any) {
+      const targetDropdown = event.currentTarget.querySelector('.dropdown')
+
+      targetDropdown.classList.add('hidden')
+    },
+    closeAllDropdowns(skipDropdown?: any) {
+      const allDropdowns = [...document.querySelectorAll('.dropdown')]
+
+      for (const dropdown of allDropdowns) {
+        if (dropdown === skipDropdown) continue
+
+        dropdown.classList.add('hidden')
+      }
     },
     onScroll() {
       const currentScrollPosition =
@@ -443,14 +425,17 @@ export default Vue.extend({
       if (currentScrollPosition <= 1) {
         this.showNavbar = true
         this.showBackground = false
+
         return
       }
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 1) {
-        return
-      }
+
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 1) return
+
+      if (currentScrollPosition > this.lastScrollPosition)
+        this.closeAllDropdowns()
+
       this.showNavbar = currentScrollPosition < this.lastScrollPosition
       this.lastScrollPosition = currentScrollPosition
-
       this.showBackground = true
     },
   },

@@ -52,8 +52,6 @@ module.exports = {
   variants: {
     extend: {
       opacity: ['dark'],
-      boxShadow: ['dark'],
-      backgroundColor: ['group-focus'],
     },
   },
 }

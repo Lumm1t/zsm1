@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'jit',
+  mode: process.env.NODE_ENV ? 'jit' : undefined, // https://github.com/tailwindlabs/tailwindcss/issues/3982#issuecomment-815516801
   darkMode: 'class',
   theme: {
     container: {
@@ -52,6 +52,15 @@ module.exports = {
       backgroundPosition: {},
       gridTemplateRows: {
         heroinfo: '1fr 2fr 1fr',
+      },
+      animation: {
+        'side-to-side': '1.2s infinite side-to-side',
+      },
+      keyframes: {
+        'side-to-side': {
+          '0%, 100%': { transform: 'translateX(-3px)' },
+          '50%': { transform: 'translateX(3px)' },
+        },
       },
     },
   },

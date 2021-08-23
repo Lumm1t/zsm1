@@ -6,10 +6,13 @@
       items-center
       justify-center
       max-w-[70%]
+      gap-16
       z-10
     "
   >
     <VideoParagraph />
+
+    <VideoButton />
   </div>
 </template>
 

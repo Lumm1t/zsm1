@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   darkMode: 'class',
   theme: {
     container: {
@@ -47,11 +48,6 @@ module.exports = {
       gridTemplateRows: {
         heroinfo: '1fr 2fr 1fr',
       },
-    },
-  },
-  variants: {
-    extend: {
-      opacity: ['dark'],
     },
   },
 }

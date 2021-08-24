@@ -23,7 +23,7 @@ module.exports = {
         heroside: '45%',
       },
       colors: {
-        primary: '#00d563',
+        primary: '#06c138',
         light: {
           text: '#000000',
           bg: '#e7eaeb',

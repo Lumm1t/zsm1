@@ -11,15 +11,14 @@
       md:mx-heroinfo
     "
   >
-    <div
-      class="grid grid-cols-1 2lg:grid-cols-2 items-center gap-8 xl:gap-0 mb-6"
-    >
+    <div class="grid grid-cols-1 2lg:grid-cols-2 items-center gap-8 xl:gap-5">
       <div class="text-center 2lg:text-left">
         <h1
           class="
-            title-font
-            font-medium
-            text-primary text-2xl
+            font-bold
+            text-light-text
+            dark:text-dark-text
+            text-2xl
             sm:text-3xl
             md:text-4xl
             transform
@@ -39,6 +38,7 @@
             leading-relaxed
             text-light-text
             dark:text-dark-text
+            opacity-80
             row-start-1
             2lg:row-start-2
           "
@@ -50,7 +50,7 @@
       <div class="row-start-2 2lg:row-start-1 flex items-center justify-center">
         <component
           :is="heroDescriptions[currentSlide].image"
-          class="object-cover object-center rounded w-3/5 h-auto"
+          class="object-cover object-center rounded w-4/5 h-auto"
         />
       </div>
     </div>

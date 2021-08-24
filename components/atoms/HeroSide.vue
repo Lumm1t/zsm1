@@ -19,22 +19,31 @@
     >
       <button
         class="
+          group
           flex flex-row
           cursor-pointer
-          transform
-          hover:-translate-x-2 hover:-translate-y-2
-          focus:-translate-x-2 focus:-translate-y-2
           text-light-hero-side
           dark:text-dark-hero-side
           focus:text-light-text
           hover:text-light-text
           dark:hover:text-dark-text dark:focus:text-dark-text
-          duration-700
           outline-none
           focus:outline-none
         "
       >
-        <svg class="transform rotate-180 mr-5" width="10" height="21">
+        <svg
+          class="
+            transform
+            rotate-180
+            mr-5
+            transform
+            duration-700
+            group-hover:-translate-x-2
+            group-focus:-translate-x-2
+          "
+          width="10"
+          height="21"
+        >
           <path
             d="M2 2l6 8.4-6 8.4"
             stroke-width="2"
@@ -45,7 +54,18 @@
           ></path>
         </svg>
 
-        <div class="text-left hidden xl:block w-48">
+        <div
+          class="
+            text-left
+            hidden
+            xl:block
+            w-48
+            transform
+            duration-700
+            group-hover:-translate-x-2 group-hover:-translate-y-2
+            group-focus:-translate-x-2 group-focus:-translate-y-2
+          "
+        >
           <h2 class="block text-2xl font-bold">
             {{
               heroDescriptions[previousSlide].short ||
@@ -66,22 +86,29 @@
     >
       <button
         class="
+          group
           flex flex-row-reverse
           cursor-pointer
-          transform
-          hover:translate-x-2 hover:-translate-y-2
-          focus:translate-x-2 focus:-translate-y-2
           text-light-hero-side
           dark:text-dark-hero-side
           focus:text-light-text
           hover:text-light-text
           dark:hover:text-dark-text dark:focus:text-dark-text
-          duration-700
           outline-none
           focus:outline-none
         "
       >
-        <svg class="ml-5" width="10" height="21">
+        <svg
+          class="
+            ml-5
+            transform
+            duration-700
+            group-hover:translate-x-2
+            group-focus:translate-x-2
+          "
+          width="10"
+          height="21"
+        >
           <path
             d="M2 2l6 8.4-6 8.4"
             stroke-width="2"
@@ -92,7 +119,18 @@
           ></path>
         </svg>
 
-        <div class="text-right hidden xl:block w-48">
+        <div
+          class="
+            text-right
+            hidden
+            xl:block
+            w-48
+            transform
+            duration-700
+            group-hover:translate-x-2 group-hover:-translate-y-2
+            group-focus:translate-x-2 group-focus:-translate-y-2
+          "
+        >
           <h2 class="block text-2xl font-bold">
             {{
               heroDescriptions[nextSlide].short ||

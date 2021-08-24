@@ -191,7 +191,18 @@
         <a
           v-if="item.link"
           :href="item.link"
-          class="hover:text-primary focus:text-primary focus:outline-none"
+          class="
+            focus:outline-none
+            before:transition-transform
+            before:duration-300
+            before:block
+            before:border-t
+            before:border-black
+            dark:before:border-white
+            before:scale-x-0 before:origin-top
+            hover:before:scale-x-100
+            focus:before:scale-x-100
+          "
         >
           {{ item.title }}
         </a>
@@ -199,7 +210,18 @@
         <div v-else @click="dropdownOpen" @keydown.esc="dropdownClose">
           <a
             href="#"
-            class="hover:text-primary focus:text-primary focus:outline-none"
+            class="
+              focus:outline-none
+              before:transition-transform
+              before:duration-300
+              before:block
+              before:border-t
+              before:border-black
+              dark:before:border-white
+              before:scale-x-0 before:origin-top
+              hover:before:scale-x-100
+              focus:before:scale-x-100
+            "
           >
             <div class="flex items-center gap-1">
               {{ item.title }}

@@ -70,7 +70,7 @@
     "eslint-plugin-unicorn": "^35.0.0",
     "eslint-plugin-vue": "^7.16.0",
     "eslint-plugin-vue-a11y": "^0.0.31",
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
